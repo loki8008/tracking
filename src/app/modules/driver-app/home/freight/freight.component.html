@@ -1,0 +1,38 @@
+<div>
+
+  <table mat-table [dataSource] = "dataSource" class="mat-elevation-z8 ">
+    <ng-container matColumnDef="payment_terms">
+      <th mat-header-cell *matHeaderCellDef> payment_terms </th>
+      <td mat-cell *matCellDef="let element">{{element.payment_terms}} </td>
+    </ng-container>
+    <ng-container matColumnDef="quantity">
+      <th mat-header-cell *matHeaderCellDef> quantity</th>
+      <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+    </ng-container>
+    <!-- <ng-container matColumnDef="weight">
+      <th mat-header-cell *matHeaderCellDef>  </th>
+      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+    </ng-container> -->
+    <ng-container matColumnDef="freight_estimation">
+      <th mat-header-cell *matHeaderCellDef>freight_estimation </th>
+      <td mat-cell *matCellDef="let element"> {{element.freight_estimation}} </td>
+    </ng-container>
+    <ng-container matColumnDef="action">
+      <th  mat-header-cell *matHeaderCellDef> Action </th>
+      <td mat-cell *matCellDef="let element" class="action-link">
+        <button mat-raised-button color="primary" (click)="openDialog('Update',element)">Edit</button>|
+        <!-- <button mat-raised-button color="primary" (click)="openDialog('Delete',element)">Delete</button> -->
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef ="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+
+  <div
+  class="map"
+  leaflet
+  [leafletOptions]="options"
+  (leafletMapReady)="onMapReady($event)"
+></div>

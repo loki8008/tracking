@@ -1,0 +1,95 @@
+<div class="a" style="width: 100%; height: 559px;">
+<form #register="ngForm" [formGroup]="form1">
+
+  <div class =" flex justify-center a" >
+    <div class="opacity-100 rounded shadow-2xl w-1/3">
+       <h2 class = "text-3xl font-bold mb-10 text-violet-900">Driver Register</h2>
+        <div class="flex flex-col items-center mb-6">
+        <mat-form-field class="driver w-48" appearance="fill">
+          <mat-label class=" font-bold text-black  ">Name:</mat-label>
+          <input type="text" formControlName="Name" matInput />
+          <mat-error *ngIf="form1.get('Name')?.hasError('required')">
+            Name is required*
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width w-48 " appearance="fill">
+          <mat-label class=" font-bold text-black ">Address:</mat-label>
+          <input formControlName="Address" matInput>
+          <mat-error *ngIf="form1.get('Address')?.hasError('required')">
+            Address is required*
+          </mat-error>
+        </mat-form-field>
+                <mat-form-field class="example-full-width w-48 " appearance="fill">
+          <mat-label class=" font-bold text-black ">Village:</mat-label>
+          <input formControlName="Village" matInput>
+          <mat-error *ngIf="form1.get('Village')?.hasError('required')">
+            Village is required*
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width w-48" appearance="fill">
+          <mat-label class=" font-bold text-black ">District:</mat-label>
+          <input formControlName="District" matInput>
+          <mat-error *ngIf="form1.get('District')?.hasError('required')">
+            District is required*
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width w-48" appearance="fill">
+          <mat-label class=" font-bold text-black ">Pincode:</mat-label>
+          <input formControlName="Pincode" matInput>
+          <mat-error *ngIf="form1.get('Pincode')?.hasError('required')">
+            Pincode is required*
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width w-48" appearance="fill">
+          <mat-label class=" font-bold text-black ">State:</mat-label>
+          <input formControlName="State" matInput>
+          <mat-error *ngIf="form1.get('State')?.hasError('required')">
+            State is required*
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width w-48" appearance="fill">
+          <mat-label class=" font-bold text-black ">Mobilenumber:</mat-label>
+          <input formControlName="Mobile_number" type="text" class="form-control" matInput>
+          <mat-error *ngIf="Mobile_number?.invalid && Mobile_number?.touched" class="text-danger">Mobile_number Required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width w-48" appearance="fill">
+          <mat-label class=" font-bold text-black ">Email:</mat-label>
+          <input formControlName="Email" type="text" class="form-control" matInput>
+          <mat-error *ngIf="Email?.invalid && Email?.touched" class="text-danger">Email is Required</mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width w-48" appearance="fill">
+          <mat-label class=" font-bold text-black ">Licenseno:</mat-label>
+          <input formControlName="License_no" matInput>
+          <mat-error *ngIf="form1.get('License_no')?.hasError('required')">
+            License_no number is required*
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width w-48 " appearance="fill">
+          <mat-label class=" font-bold text-black ">Aadhaarno:</mat-label>
+          <input formControlName="Aadhaar_no" matInput>
+          <mat-error *ngIf="form1.get('Aadhaar_no')?.hasError('required')">
+            Aadhaar_no number is required*
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="flex flex-col items-center mb-6" [formGroup]="form2">
+          <mat-form-field class="example-full-width w-48" appearance="fill">
+            <mat-label class=" font-bold text-black ">Password:</mat-label>
+            <input formControlName="Password" matInput [errorStateMatcher]="passwordErrorMatcher">
+            <mat-error>Error: {{ getErrorMessage('Password') }}</mat-error>
+          </mat-form-field>
+          <mat-form-field class="example-full-width w-48 " appearance="fill">
+            <mat-label class=" font-bold text-black ">Confirmpassword:</mat-label>
+            <input formControlName="Confirm_password" matInput [errorStateMatcher]="confirmErrorMatcher">
+            <mat-error>Error: {{ getErrorMessage('Confirm_password') }}</mat-error>
+          </mat-form-field>
+        </div>
+      <button (click)="saveForm()" mat-raised-button color="primary"
+            class="block w-full bg-blue-400 p-4 rounded text-blue-800" [disabled]="form1.invalid"[routerLink]="['/login']">register</button>
+            <a [routerLink]="['/login']" class="btn btn-link text-blue-800">Already Registered User</a>
+  </div>
+</div>
+</form>
+</div>

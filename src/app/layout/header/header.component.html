@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <a href="javascript:void(0)" (click)="goBack()">
+    <mat-icon>arrow_back_ios</mat-icon>
+    </a>
+  </button>
+  <span>Driver app</span>
+  <span class="example-spacer"></span>
+  <mat-icon>share</mat-icon>
+    <mat-icon>download</mat-icon>
+    <samp>download webapp</samp>
+    <mat-form-field appearance="fill">
+    <mat-label>language</mat-label>
+    <mat-select>
+      <mat-option>None</mat-option>
+       <mat-option *ngFor="let state of language" [value]="state">{{state}}</mat-option>
+    </mat-select>
+    </mat-form-field>
+</mat-toolbar>
+

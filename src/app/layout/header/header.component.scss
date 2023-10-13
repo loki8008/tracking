@@ -1,0 +1,9 @@
+.example-spacer {
+  flex: 1 1 auto;
+  background-color: blue;
+  text-align: center;
+}
+
+::ng-deep .mat-toolbar-row, .mat-toolbar-single-row{
+height:37px
+}
